@@ -1,0 +1,45 @@
+class Form{
+    constructor(){
+        this.input = createInput("Name");
+        this.button = createButton("Play");
+        this.greeting = createElement('h3');
+    }
+
+    myHide(){
+        this.input.hide();
+        this.button.hide();
+        this.greeting.hide();
+    }
+
+    display(){
+
+        var title = createElement('h2');
+        title.html("Car Racing Game");
+        title.position(130,0);
+
+        //var input = createInput("Name");
+        this.input.position(130,160);
+
+        //var button = createButton("Play");
+        this.button.position(250,250);
+
+        //var greeting = createElement('h3');
+        
+        this.button.mousePressed(()=>{
+
+            this.input.hide();
+            this.button.hide();
+
+            player.name = this.input.value();
+            playerCount = playerCount + 1;
+
+            player.index = playerCount;
+            player.update();
+            player.updateCount(playerCount);
+
+            this.greeting.html("Hello " + player.name)
+            this.greeting.position(130,160);
+
+        })
+    }
+}
